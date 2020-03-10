@@ -18,6 +18,6 @@ class MainActivity : AppCompatActivity() {
     private fun init() {
         vpNewCategory.adapter =
             CategoryNewsAdapter(supportFragmentManager, mockData.getNewsCategoryFragment(7))
-        tabLayNewCategroy.setupWithViewPager(vpNewCategory)
+        tabLayNewCategory.setupWithViewPager(vpNewCategory)
     }
 }
