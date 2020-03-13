@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.umiitkose.milliyetappclone.R
 import com.umiitkose.milliyetappclone.adapter.CategoryNewsAdapter
 import com.umiitkose.milliyetappclone.mock.mockData
+import com.umiitkose.milliyetappclone.util.extGetDrawable
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +18,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun init() {
         vpNewCategory.adapter =
-            CategoryNewsAdapter(supportFragmentManager, mockData.getNewsCategoryFragment(7))
+            CategoryNewsAdapter(
+                supportFragmentManager,
+                mockData.getNewsCategoryFragment()
+            )
         tabLayNewCategory.setupWithViewPager(vpNewCategory)
+
+        toolbar.logo = extGetDrawable(R.drawable.milliyet_logo_white)
+
     }
 }
